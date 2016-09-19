@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="login-container">	
+	<h3> Hello {{ ctrl.authService.currentUser.name }}
+	<hr>
+		<a class="btn btn-info" style="margin-top: 1%" ng-click="ctrl.logout()">LogOut</a></h3>
+	</div>
+		
+</div>
+<ui-view></ui-view>

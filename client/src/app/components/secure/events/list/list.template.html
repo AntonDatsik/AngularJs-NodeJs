@@ -1,0 +1,15 @@
+<div class="login-container" style="width: 70%; margin: 10px auto; text-align: left">	
+		<h2> Available events list 
+					<a class="btn btn-info" style="margin: 10px 30px;" ui-sref="secure/events/create"> <i class="glyphicon glyphicon-pencil"></i> Create new event</a></h3>
+		</h2>
+
+		<div class="list-group" ng-repeat="event in ctrl.events">
+			<a ui-sref="secure/event({id: event._id})" class="list-group-item">
+				<h3>{{ event.name }}</h3>
+				<p> 
+				Participants:
+					<span class="badge">{{ event.participants.length }}</span>
+				</p>
+			</a>
+		</div>
+</div>

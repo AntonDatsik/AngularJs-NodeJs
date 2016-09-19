@@ -1,0 +1,27 @@
+<div class="container">
+	<h2>{{ ctrl.event.name }} event</h2>
+	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Participant</th>
+	        <th>Go</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr ng-repeat="user in ctrl.users" ng-class="{'active': user._id === ctrl.authService.currentUser._id }">
+	      	<td > {{ user.name }} </td>
+	      	<td>
+		      	<div class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="glyphicon" ng-class="{'glyphicon-ok': ctrl.participantsIds.has(user._id), 'glyphicon-remove': !ctrl.participantsIds.has(user._id)}"></i>
+					</a>
+					<ul class="dropdown-menu" ng-if="user._id === ctrl.authService.currentUser._id">
+						<li><a ng-click="ctrl.addUserToEvent()"><i class="glyphicon glyphicon-ok"></i></a></li>
+						<li><a ng-click="ctrl.removeUserFromEvent()"><i class="glyphicon glyphicon-remove"></i></a></li>
+					</ul>
+	  			</div>
+	      	</td>
+	      </tr>
+	    </tbody>
+	</table>
+</div>
